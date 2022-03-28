@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klawiatura ekranowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="letter"></div>
+    <div id="keyboard"></div>
+   
+    <script>
+        var btn;
+        var char;
+        for (var i = 48; i <= 90; i++) {
+            char = String.fromCharCode(i)
+            
+            btn = document.createElement("button");
+           
+            btn.id = i;
+            btn.innerText = char;
+
+            btn.addEventListener("click", function(char) {
+                document.getElementById("letter").innerHTML += String.fromCharCode(this.id);
+            });
+
+            document.getElementById("keyboard").appendChild(btn);
+        }
+
+    </script>
+</body>
+</html>
